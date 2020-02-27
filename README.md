@@ -51,3 +51,9 @@
     </html>
 
     ```
+    
+5. Upload the application (mvn spring-boot: run), and rectify:
+    - That the page is accessible from: http://localhost:8080/index.html
+    - When you open the browser developer console, you should NOT receive 404 error messages (that is, the JavaScript libraries were loaded correctly).
+    
+    ![error](https://user-images.githubusercontent.com/44879884/75454564-9d99ba80-5943-11ea-9c7a-68c3d7638a44.PNG)
