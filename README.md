@@ -10,4 +10,5 @@
     Se creo el directorio static en el directorio resources  
     ![Capture1](https://user-images.githubusercontent.com/48154086/75450561-10ebfe00-593d-11ea-9bb4-4e29436c3b79.PNG)
 
-3. 
+3. asdasd
+![Capture](https://user-images.githubusercontent.com/44879884/75451597-d2574300-593e-11ea-9f45-cfc7790dfd4e.PNG)
