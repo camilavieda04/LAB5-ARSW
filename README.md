@@ -1,5 +1,9 @@
 # LAB5-ARSW
 
+## Integrantes
+- Juan David Nacarro 
+- Sarah Camila Vieda
+
 1. Include within the Gradle dependencies (build.gradle) the 'webjars' of jQuery and Bootstrap (this allows you to have these JavaScript libraries locally when building the project):
 
     A continuación se agregaron las dependencias en el archivo build.gradle
