@@ -14,3 +14,34 @@
 
     A continuación creamos un espacio de entrada en donde digitaremos el autor y un boton de "Get Blueprints" en donde se retornaran todos     los blueprints de acuerdo a un autor específico.
     ![Capture](https://user-images.githubusercontent.com/44879884/75451597-d2574300-593e-11ea-9f45-cfc7790dfd4e.PNG)
+
+4. In the <head> element of the page, add the references to the jQuery, Bootstrap libraries and the Bootstrap style sheet.
+    
+    Se completó el index.html 
+    
+    ``` html
+    <html>
+    <head>
+        <title>Blueprints</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+        <script src="js/apimock.js"></script>
+        <script src="js/app.js"></script>
+        <link rel="stylesheet"
+          href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
+    </head>
+
+    <body>
+        <form action="" method="get" id="form">
+        <label for="fname">Author:</label>
+        <input type="text" id="fname" name="fname">
+        </form>
+
+        <button type="submit" form="form" value="Submit">Get Blueprints</button>
+    </body>
+    </html>
+
+    ```
