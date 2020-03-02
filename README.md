@@ -57,3 +57,122 @@
     - When you open the browser developer console, you should NOT receive 404 error messages (that is, the JavaScript libraries were loaded correctly).
     
     ![error](https://user-images.githubusercontent.com/44879884/75454564-9d99ba80-5943-11ea-9c7a-68c3d7638a44.PNG)
+    
+    
+## Frontend Logic
+
+1. Now, you will create a JavaScript Module that, as a controller, maintains the states and offers the operations required by the view. For this, consider the JavaScript Module pattern, and create a module in the static/js/app.js path.
+
+    Creamos la clase app.js en la siguiente ruta static/js/
+
+    ![Capture1](https://user-images.githubusercontent.com/44879884/75718146-6bb88900-5ca0-11ea-95c0-59e8e34887d7.PNG)
+
+2. Copy the provided module (apimock.js) in the same path of the module created before. In this one add more planes (with more points) to the 'burned' authors in the code.
+
+Agregamos la clase apimock.js en el paquete js.
+
+
+``` java
+    
+    var apimock = (function () {
+
+    var mockdata = [];
+
+    mockdata["JhonConnor"] = [
+        {
+            author: "JhonConnor",
+            name: "house",
+            points: [
+                {
+                    x: 10,
+                    y: 20
+                },
+                {
+                    x: 15,
+                    y: 25
+                },
+                {
+                    x: 45,
+                    y: 25
+                }
+            ]
+        },
+        {
+            author: "JhonConnor",
+            name: "bike",
+            points: [
+                {
+                    x: 30,
+                    y: 35
+                },
+                {
+                    x: 40,
+                    y: 45
+                }
+            ]
+        }
+    ]
+
+    mockdata['LexLuthor'] = [
+        {
+            author: 'LexLuthor',
+            name: 'kryptonite',
+            points: [
+                {
+                    x: 60,
+                    y: 65
+                },
+                {
+                    x: 70,
+                    y: 75
+                }
+            ]
+        }
+    ]
+
+    return {
+        getBlueprintsByAuthor: function(author, callback) {
+            callback(mockdata[author]);
+        },
+
+        getBlueprintsByNameAndAuthor: function(name, author, callback) {
+            blueprint = mockdata[author].find(function(blueprint) {
+                return blueprint.name == name
+            });
+            callback(blueprint)
+        }
+    }
+
+    })();
+```
+   
+3. Add the import of the two new modules to the HTML page (after importing the jQuery and Bootstrap libraries):
+``` html
+    <script src="js/apimock.js"></script>
+    <script src="js/app.js"></script>
+```
+
+4. Have the previously created module keep private:
+    - The name of the selected author. 
+    - The list of name and size of the plans of the selected author. That is, a list of objects, where each object will have two         properties: plan name, and number of points on the plane. Together with a public operation that allows changing the name of       the currently selected author.
+    
+    Se mantuvo privado el nombre del autor seleccionado y una lista de nombres con el tamaño de los planes por cada uno de los         autores.
+
+5. Add to the module app.js a public operation that allows updating the list of plans, based on the name of its author (given as a parameter). To do this, said operation must invoke the getBlueprintsByAuthor operation of the provided apimock module, sending as a callback a function that:
+
+    - Take the list of plans, and apply a map function that converts your elements to objects with only the name and number of points.
+    
+    ![Capture2](https://user-images.githubusercontent.com/44879884/75719858-850f0480-5ca3-11ea-8e1e-49a650aba24c.PNG)
+    
+    - On the resulting list, make another map, which takes each of these elements, and through jQuery add a  element (with the respective ) to the table created in point 4. Consider the jQuery selectors and tutorials available online. For now do not add buttons to the generated rows.
+    
+    ![Capture5](https://user-images.githubusercontent.com/44879884/75720093-dfa86080-5ca3-11ea-9c97-fa11f74271eb.PNG)
+    
+    ![Capture7](https://user-images.githubusercontent.com/44879884/75720227-1da58480-5ca4-11ea-82fa-149614bddafc.PNG)
+
+    
+    - On any of the two listings (the original, or the one transformed by map), apply a reduce that calculates the number of points. With this value, use jQuery to update the corresponding field within the DOM.
+    
+    ![Capture6](https://user-images.githubusercontent.com/44879884/75720095-e040f700-5ca3-11ea-980b-5e77aa08d467.PNG)
+    
+    
