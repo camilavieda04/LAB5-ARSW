@@ -175,4 +175,15 @@ Agregamos la clase apimock.js en el paquete js.
     
     ![Capture6](https://user-images.githubusercontent.com/44879884/75720095-e040f700-5ca3-11ea-980b-5e77aa08d467.PNG)
     
+## Parte 2
+
+   - To the page, add an element of type Canvas, with its respective identifier. Make your dimensions not too large to make room for the other components, but enough to be able to draw the plans.
+   
+   ``` html
+    <canvas id="canvas" width="200" height="100" style="border:1px solid #000000;">
+    </canvas>
+   ```
+   
+   ![Capture1](https://user-images.githubusercontent.com/44879884/75790900-d10c8880-5d39-11ea-8b77-e0b139dc8278.PNG)
+
     
