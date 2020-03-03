@@ -1,23 +1,31 @@
 <html>
     <style type="text/css">
-      form{
-          margin: 20px 0;
-      }
-      form input, button{
-          padding: 5px;
-      }
-      table{
-          width: 40%;
-          margin-bottom: 20px;
-          border-collapse: collapse;
-      }
-      table, th, td{
-          border: 1px solid #cdcdcd;
-      }
-      table th, table td{
-          padding: 10px;
-          text-align: left;
-      }
+        form{
+            margin: 20px 0;
+        }
+        form input, button{
+            padding: 5px;
+        }
+        table{
+            width: 40%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid #cdcdcd;
+        }
+        table th, table td{
+            padding: 10px;
+            text-align: left;
+        }
+        canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 800px;
+    }
   </style>
 
 <head>
@@ -34,22 +42,25 @@
 </head>
 
 <body>
-	<form action="" method="get" id="form">
-	<label for="fname">Author:</label>
-	<input type="text" id="fname" name="fname">
-	</form>
+    <div>
+        <form action="" method="get" id="form">
+        <label for="fname">Author:</label>
+        <input type="text" id="fname" name="fname">
+        </form>
+        <button type="button" form="form" onclick="app.prueba()" >Get Blueprints</button>
+        <table id="tabla">
+            <thead>
+            <tr>
+                <th>Blueprint name</th>
+                <th>Number of points</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 
-	<button type="submit" form="form" value="Submit">Get Blueprints</button>
-  <button type="button" form="form" onclick="app.prueba()" >Gordo h´pta 2</button>
-  <table id="tabla">
-      <thead>
-      <tr>
-          <th>Blueprint name</th>
-          <th>Number of points</th>
-      </tr>
-      </thead>
-      <tbody>
-      </tbody>
-  </table>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+        </canvas>
+    </div>
 </body>
 </html>

@@ -12,10 +12,10 @@ app= (function (){
                 var temp = '<tr><td id="nombreActor">'+bp.key+'</td><td id="puntos">'+bp.value+'</td></tr>';
                 $("#tabla tbody").append(temp);
             })
-            var valorTotal = diccionario.reduce(function(total, valor){
+            var sumPoints = diccionario.reduce(function(total, valor){
                 return total.value + valor.value;
             })
-            alert(valorTotal)
+            //alert(sumPoints)
         }
     };
     return {
