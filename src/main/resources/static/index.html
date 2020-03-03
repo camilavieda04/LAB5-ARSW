@@ -24,7 +24,6 @@
         margin-left: auto;
         margin-right: auto;
         display: block;
-        width: 800px;
     }
   </style>
 
@@ -46,8 +45,9 @@
         <form action="" method="get" id="form">
         <label for="fname">Author:</label>
         <input type="text" id="fname" name="fname">
-        </form>
         <button type="button" form="form" onclick="app.prueba()" >Get Blueprints</button>
+        <button type="button" form="form" onclick="app.draw('kryptonite')" >Draw Test</button>
+        </form>
         <table id="tabla">
             <thead>
             <tr>
@@ -58,8 +58,11 @@
             <tbody>
             </tbody>
         </table>
+        
+        <div id="totalPoints"><h3></h3></div>
 
-        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+        <div id="titlebp"><h3></h3></div>
+        <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;">
         </canvas>
     </div>
 </body>

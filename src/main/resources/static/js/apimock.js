@@ -43,12 +43,16 @@ var apimock = (function () {
             name: 'kryptonite',
             points: [
                 {
-                    x: 60,
-                    y: 65
+                    x: 0,
+                    y: 0
                 },
                 {
-                    x: 70,
-                    y: 75
+                    x: 50,
+                    y: 50
+                },
+                {
+                    x: 130,
+                    y: 50
                 }
             ]
         }
