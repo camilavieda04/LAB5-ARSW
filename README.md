@@ -232,7 +232,28 @@ Agregamos la clase apimock.js en el paquete js.
    ```
    
    - Modify the app.js code so that it is possible to switch between the apimock and the apiclient with just one line of code.
-    
+   
+        Para solicitar los blueprints dados por el api y no los dados por apimock únicamente cambiamos el llamado de los métodos a apimock por apiclient.
+        
+   ``` javascript
+    return {
+        prueba: function () {
+            author = document.getElementById("fname").value;
+            apiclient.getBlueprintsByAuthor(author,lista);
+            //apimock.getBlueprintsByAuthor(author,lista);  <--- Usando Apimock 
+        },
+        draw: function (bp) {
+            author = document.getElementById("fname").value;
+            obra = bp;
+            apiclient.getBlueprintsByNameAndAuthor(obra,author,pintar);
+            //apimock.getBlueprintsByNameAndAuthor(obra,author,pintar);  <--- Usando Apimock 
+        }
+    };
+   ```
+   Ahora verificamos que la aplicación funcione con los datos dados en el api. 
+   
+   ![Capture2](https://user-images.githubusercontent.com/44879884/75908080-777a8b80-5e17-11ea-92f6-00e40a62077e.PNG)
+   
    - Review the documentation and examples of Bootstrap styles (already included in the exercise), add the necessary elements to the page to make it more colorful, and closer to the mock given at the beginning of the statement.
 
     
