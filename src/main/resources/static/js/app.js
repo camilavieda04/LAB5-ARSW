@@ -1,6 +1,5 @@
 app= (function (){
     var lista = function (variable) {
-        alert(variable + "sera1")
         if(variable != null){
             var diccionario = variable.map(function(bp){
                 return {key:bp.name, value:bp.points.length}
@@ -24,7 +23,6 @@ app= (function (){
         ctx.beginPath();
         var anterior;
         variable.points.map(function(points) {
-            alert(anterior)
             if (!anterior) {
                 anterior = points;
                 ctx.moveTo(anterior.x, anterior.y);
@@ -37,12 +35,14 @@ app= (function (){
     return {
             prueba: function () {
                 author = document.getElementById("fname").value;
-                apimock.getBlueprintsByAuthor(author,lista);
+                apiclient.getBlueprintsByAuthor(author,lista);
+                //apimock.getBlueprintsByAuthor(author,lista);  <--- Usando Apimock 
             },
             draw: function (bp) {
                 author = document.getElementById("fname").value;
                 obra = bp;
-                apimock.getBlueprintsByNameAndAuthor(obra,author,pintar);
+                apiclient.getBlueprintsByNameAndAuthor(obra,author,pintar);
+                //apimock.getBlueprintsByNameAndAuthor(obra,author,pintar);  <--- Usando Apimock 
             }
         };
 })();
