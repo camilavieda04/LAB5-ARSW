@@ -6,7 +6,7 @@ app= (function (){
             })
             $("#tabla tbody").empty();
             diccionario.map(function(bp){
-                var temp = '<tr><td id="nombreActor">'+bp.key+'</td><td id="puntos">'+bp.value+'</td><td type="button" onclick="app.draw(\''+bp.key+'\')">Open</td></tr>';
+                var temp = '<tr><td id="nombreActor">'+bp.key+'</td><td id="puntos">'+bp.value+'</td><td type="button" id="bottom" class="btn btn-info" onclick="app.draw(\''+bp.key+'\')">Open</td></tr>';
                 $("#tabla tbody").append(temp);
             })
             var sumPoints = diccionario.reduce(function(total, valor){
