@@ -255,5 +255,8 @@ Agregamos la clase apimock.js en el paquete js.
    ![Capture2](https://user-images.githubusercontent.com/44879884/75908080-777a8b80-5e17-11ea-92f6-00e40a62077e.PNG)
    
    - Review the documentation and examples of Bootstrap styles (already included in the exercise), add the necessary elements to the page to make it more colorful, and closer to the mock given at the beginning of the statement.
+   
+   ![nice](https://user-images.githubusercontent.com/44879884/75917812-99c8d500-5e28-11ea-9a67-3d38ea85701c.PNG)
+
 
     
