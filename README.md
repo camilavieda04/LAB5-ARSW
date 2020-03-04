@@ -185,5 +185,29 @@ Agregamos la clase apimock.js en el paquete js.
    ```
    
    ![Capture1](https://user-images.githubusercontent.com/44879884/75790900-d10c8880-5d39-11ea-8b77-e0b139dc8278.PNG)
+   
+   - To the app.js module add an operation that, given the name of an author, and the name of one of its planes given as parameters, using the getBlueprintsByNameAndAuthor method of apimock.js and a callback function:
+   
+   ``` javascript
+        draw: function (bp) {
+            author = document.getElementById("fname").value;
+            obra = bp;
+            apimock.getBlueprintsByNameAndAuthor(obra,author,pintar);
+        }
+   ```
+   
+   - Verify that the application now, in addition to displaying the list of the plans of an author, allows you to select one of these and graph it. To do this, have the button generated with the click event associated with the operation done in the last column (sending the corresponding names as a parameter).
+   
+   ![Capture](https://user-images.githubusercontent.com/44879884/75896423-15188f80-5e05-11ea-87bb-020d89936cad.PNG)
+   
+   - Verify that the application now allows: consult the plans of an author and graph the one selected.
+   
+   ![Capture1](https://user-images.githubusercontent.com/44879884/75896686-70e31880-5e05-11ea-8fc2-eee1c76c0247.PNG)
+   
+   - Once the application works (front-end only), make a module (call it apiclient) that has the same operations of the apimock, but for the same use real data consulted from the REST API. For the above, review how to make GET requests with jQuery, and how the callback scheme is handled in this context.
+   
+   - Modify the app.js code so that it is possible to switch between the apimock and the apiclient with just one line of code.
+
+   - Review the documentation and examples of Bootstrap styles (already included in the exercise), add the necessary elements to the page to make it more colorful, and closer to the mock given at the beginning of the statement.
 
     
