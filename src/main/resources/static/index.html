@@ -19,12 +19,17 @@
             text-align: left;
         }
         canvas {
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .title{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
+        }
   </style>
 
 <head>
@@ -46,13 +51,13 @@
         <label for="fname">Author:</label>
         <input type="text" id="fname" name="fname">
         <button type="button" form="form" onclick="app.prueba()" >Get Blueprints</button>
-        <button type="button" form="form" onclick="app.draw('kryptonite')" >Draw Test</button>
         </form>
         <table id="tabla">
             <thead>
             <tr>
                 <th>Blueprint name</th>
                 <th>Number of points</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -61,7 +66,7 @@
         
         <div id="totalPoints"><h3></h3></div>
 
-        <div id="titlebp"><h3></h3></div>
+        <div class="title" id="titlebp"><h3></h3></div>
         <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;">
         </canvas>
     </div>
