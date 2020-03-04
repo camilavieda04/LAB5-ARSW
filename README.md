@@ -206,8 +206,33 @@ Agregamos la clase apimock.js en el paquete js.
    
    - Once the application works (front-end only), make a module (call it apiclient) that has the same operations of the apimock, but for the same use real data consulted from the REST API. For the above, review how to make GET requests with jQuery, and how the callback scheme is handled in this context.
    
+       Se crea el siguiente modulo que por medio de la función jQuery.get() y usando el parámetro Url el cual consulta los blueprints que están en la url del api y usando el success cuando se obtienen datos correctamente, ejecutamos el callback correspondiente con los blueprints obtenidos en la solicitud.
+   
+   ``` javascript
+    apiclient = (function() {
+        return {
+            getBlueprintsByAuthor: function(author, callback) {
+                jQuery.get({
+                    url: "http://localhost:8080/blueprints/" + author,
+                    success: function (blueprints) {
+                        callback(blueprints);
+                    },
+                });
+            },
+            getBlueprintsByNameAndAuthor: function(obra, author, callback) {
+                jQuery.get({
+                    url: "http://localhost:8080/blueprints/"+author+"/"+obra,
+                    success: function (blueprints) {
+                        callback(blueprints);
+                    },
+                });
+            }
+        };
+    })();
+   ```
+   
    - Modify the app.js code so that it is possible to switch between the apimock and the apiclient with just one line of code.
-
+    
    - Review the documentation and examples of Bootstrap styles (already included in the exercise), add the necessary elements to the page to make it more colorful, and closer to the mock given at the beginning of the statement.
 
     
